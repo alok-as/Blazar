@@ -1,0 +1,28 @@
+//Importing the Google Font - Work Sans
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap');
+
+//Variables
+$primary-font:'Work Sans', sans-serif;
+
+
+//Basic Reset
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing:inherit;
+}
+
+
+html{
+    font-size: 62.5%; //1rem = 10px
+}
+
+body{
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    box-sizing: border-box;
+}

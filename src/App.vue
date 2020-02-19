@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>heeloo</h1>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -8,5 +8,4 @@
 // #app{
 //   width: 100%;
 // }
-
 </style>
