@@ -1,17 +1,26 @@
-%heading{
-    color: $color-white;
-}
-
 .heading-1{
-    @extend %heading; 
+    color: white;
     font-size: 4.5rem;
     font-weight: 500;
 }
 
+.heading-2{
+    font-size: 3.5rem;
+    color: #334e6f;
+    font-weight: 500;
+}
+
 .heading-3{
-    @extend %heading; 
     font-size: 1.8rem;
     font-weight: 400;
+
+    &--light{
+        color: $color-white;
+    }
+
+    &--dark{
+        color: $color-dark;
+    }
 }
 
 .btn {
@@ -47,3 +56,7 @@
     }
 }
 
+//Text center
+.center{
+    text-align: center;
+}

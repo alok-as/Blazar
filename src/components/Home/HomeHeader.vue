@@ -45,7 +45,7 @@
             </nav>
             <div class="header__text">
                 <h1 class="heading-1">Find the best place to be</h1>
-                <h3 class="heading-3 header__heading-3">ListingEasy is the hassle-free way of discovering the city</h3>
+                <h3 class="heading-3 heading-3--light header__heading-3">ListingEasy is the hassle-free way of discovering the city</h3>
                 <form class="form">
                     <input type="text" list="category" class="form__control" placeholder="What are you looking for?">
                     <datalist id="category">

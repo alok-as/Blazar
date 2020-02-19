@@ -36,7 +36,7 @@ export default {
 <style lang="scss">
 .home{
   display: grid;
-  grid-template-rows: 85vh repeat(3, min-content) 40vw repeat(2, min-content);
+  grid-template-rows: 90vh repeat(3, min-content) 40vw repeat(2, min-content);
   grid-template-columns: [full-start] minmax(6rem,1fr) repeat(8,[col-start] minmax(min-content,14rem) [col-end]) minmax(6rem,1fr)[full-end];
 }
 </style>
