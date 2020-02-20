@@ -18,19 +18,24 @@
               <result-card v-for="result in results" :key="result.id" :result="result"></result-card>
             </div>
           </div>
-          <div class="results__map"></div>
+          <div class="results__map">
+            Place for Google Maps
+          </div>
         </main>
+        <app-footer></app-footer>
     </div>
 </template>
 
 <script>
 import Navbar from '../components/Shared/Navbar'
 import ResultCard from '../components/Result/ResultCard'
+import Footer from '../components/Shared/Footer'
 
 export default {
   components: {
     'app-navbar': Navbar,
-    'result-card': ResultCard
+    'result-card': ResultCard,
+    'app-footer': Footer
   },
   data () {
     return {
@@ -88,7 +93,11 @@ main{
     width: 45%;
     height: 100%;
     right: 0;
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orangered;
+    color: white;
   }
 }
 
