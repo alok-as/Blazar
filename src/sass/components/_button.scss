@@ -1,28 +1,3 @@
-.heading-1{
-    color: white;
-    font-size: 4.5rem;
-    font-weight: 500;
-}
-
-.heading-2{
-    font-size: 3.5rem;
-    color: #334e6f;
-    font-weight: 500;
-}
-
-.heading-3{
-    font-size: 1.8rem;
-    font-weight: 400;
-
-    &--light{
-        color: $color-white;
-    }
-
-    &--dark{
-        color: $color-dark;
-    }
-}
-
 .btn {
     background-color: $color-blue-light;
     color: $color-white;
@@ -54,9 +29,4 @@
     &:hover{
         background-color: $color-blue-dark;
     }
-}
-
-//Text center
-.center{
-    text-align: center;
 }

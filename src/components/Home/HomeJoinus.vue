@@ -11,6 +11,5 @@ export default {}
 <style lang="scss" scoped>
 .join-us{
     background-color:blueviolet;
-    grid-column: col-start 1 / col-end 8;
 }
 </style>

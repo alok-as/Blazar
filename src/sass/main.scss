@@ -1,3 +1,15 @@
-@import 'base';
-@import 'typography';
+//BASE
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+//LAYOUT
+@import 'layout/layout';
+
+
+//COMPONENTS
+@import 'components/button';
+@import 'components/dropdown';
+@import 'components/customselect';
+@import 'components/card';
 

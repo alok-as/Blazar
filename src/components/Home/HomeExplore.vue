@@ -9,8 +9,4 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.explore{
-    background-color:black;
-    grid-column: full-start / full-end;
-}
 </style>

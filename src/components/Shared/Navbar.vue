@@ -1,11 +1,10 @@
 <template>
-    <header class="header">
+    <div class="navigation">
         <div class="content">
-            <!-- Header Navigation -->
             <nav class="nav">
-                <div class="nav__logo">Listing <sup>easy</sup></div>
+                <div class="nav__logo" @click="toHome">Listing <sup>easy</sup></div>
                 <ul class="nav__list">
-                    <li class="nav__item">
+                        <li class="nav__item">
                         <a href="#" class="nav__link">Home</a>
                         <ul class="dropdown">
                             <li class="dropdown__item"><a href="#" class="dropdown__link">First</a></li>
@@ -44,93 +43,26 @@
                 </ul>
                 <a href="#" class="nav__signup">Sign Up / Register</a>
             </nav>
-            <!-- Header Content -->
-            <div class="header__content">
-                <h1 class="heading-1">Find the best place to be</h1>
-                <h3 class="heading-3 heading-3--light header__heading-3">ListingEasy is the hassle-free way of discovering the city</h3>
-                <form class="form">
-                    <input type="text" list="category" class="form__control" placeholder="What are you looking for?">
-                    <datalist id="category">
-                        <option value="Beauty">Beauty</option>
-                        <option value="Fitness">Fitness</option>
-                        <option value="Finances">Finances</option>
-                        <option value="Health">Health</option>
-                        <option value="Plant">Plant</option>
-                    </datalist>
-
-                    <input type="text" list="location" class="form__control" placeholder="Any Category">
-                    <datalist id="location">
-                        <option value="Delhi">Delhi</option>
-                        <option value="Mumbai">Mumbai</option>
-                    </datalist>
-                    <button class="btn" @click="searchResults">
-                        Search
-                        <svg>
-                            <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
-                        </svg>
-                    </button>
-                </form>
-                <div class="header__tags">
-                    <p>Popular:</p>
-                    <p>Food &amp; Drink</p>
-                    <p>Hotel &amp; Hostel</p>
-                    <p>Outdoor</p>
-                </div>
-            </div>
         </div>
-    </header>
+    </div>
 </template>
 
 <script>
 export default {
   methods: {
-    searchResults: function () {
-      this.$router.push({ name: 'Result' })
+    toHome: function () {
+      this.$router.push({ path: '/' })
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.header{
-    height: 90vh;
-    background-image: url("../../assets/header-back.jpg");
-    background-position: center;
-    background-size: cover;
-
-    &__content{
-        text-align: center;
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-
-    &__heading-3{
-        margin-top: -1rem;
-    }
-
-    &__tags{
-        width: 50%;
-        margin: 1.2rem auto;
-        color: $color-white;
-        font-size: 1.4rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(8rem,1fr));
-        justify-items: center;
-        grid-row-gap: 1rem;
-
-        p{
-            cursor: auto;
-            &:hover{
-                border-bottom: 1px solid white;
-            }
-        }
-
-    }
+.navigation{
+    border-bottom:1px solid $color-blue-light;
+    box-shadow: 0 .5rem .5rem rgba($color: #000000, $alpha: 0.04);
+    z-index: 25;
 }
-
 .nav{
     padding: 2.5rem 0;
     display: flex;
@@ -141,9 +73,10 @@ export default {
         font-weight: 600;
         font-size: 2.3rem;
         text-transform: uppercase;
-        color: $color-white;
+        color: $color-blue-dark;
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         sup{
             font-weight: 300;
@@ -187,10 +120,10 @@ export default {
             margin-left: .7rem;
             vertical-align: middle;
             background-color: $color-blue-light;
-                    -webkit-mask-image: url(../../assets/SVG/chevron-small-down.svg);
-                    mask-image: url(../../assets/SVG/chevron-small-down.svg);
-                    -webkit-mask-size: cover;
-                    mask-size: cover;
+            -webkit-mask-image: url(../../assets/SVG/chevron-small-down.svg);
+            mask-image: url(../../assets/SVG/chevron-small-down.svg);
+            -webkit-mask-size: cover;
+            mask-size: cover;
         }
     }
 
@@ -203,12 +136,15 @@ export default {
         opacity: 1;
         pointer-events: all;
     }
+    &__item:hover .dropdown::before{
+        box-shadow: 2rem 2rem 3rem rgba($color: #000000, $alpha: 0.04);
+    }
 
     &__link{
         &:link,
         &:visited{
             text-decoration: none;
-            color: $color-white;
+            color: $color-blue-dark;
             transition: all .3s;
         }
     }
@@ -219,7 +155,7 @@ export default {
         &:link,
         &:visited{
             text-decoration: none;
-            color: $color-white;
+            color: $color-blue-dark;
         }
 
         &::before{
@@ -237,32 +173,4 @@ export default {
         }
     }
 }
-
-.form{
-    background-color: $color-white;
-    border-radius: 100px;
-    padding: .3rem;
-    padding-left: 3rem;
-    max-width: 85%;
-    margin: 3.5rem auto 0 auto;
-    display: grid;
-    grid-template-columns: 3fr 2fr 2fr;
-    grid-gap: 1.5rem;
-
-    &__control{
-        background:none;
-        border: none;
-        outline: none;
-        font-family: inherit;
-        font-size: 1.6rem;
-        &::-webkit-calendar-picker-indicator{
-            display: none;
-        }
-
-        &::placeholder{
-            color: #444;
-        }
-    }
-}
-
 </style>

@@ -1,0 +1,23 @@
+// UTILITES
+.center{
+    text-align: center !important;
+}
+
+//MARGINS
+.mt-medium{
+    margin-top: 5rem;
+}
+.mt-small{
+    margin-top: 3rem;
+}
+
+
+//MIXINS
+@mixin clearfix{
+    &::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+

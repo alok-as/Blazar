@@ -1,0 +1,34 @@
+.heading-1{
+    color: white;
+    font-size: 4.5rem;
+    font-weight: 500;
+}
+
+.heading-2{
+    font-size: 3.5rem;
+    color: #334e6f;
+    font-weight: 500;
+}
+
+.heading-3{
+    font-size: 1.8rem;
+    font-weight: 400;
+
+    &--light{
+        color: $color-white;
+    }
+
+    &--dark{
+        color: $color-dark;
+    }
+}
+
+.heading-4{
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+
+
+
+
