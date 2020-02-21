@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <home-header></home-header>
-    <home-featured></home-featured>
+    <!-- <home-featured></home-featured> -->
   </div>
 </template>
 
 <script>
 import HomeHeader from '../components/Home/HomeHeader'
-import HomeFeatured from '../components/Home/HomeFeaturedListings'
+// import HomeFeatured from '../components/Home/HomeFeaturedListings'
 // import HomePopular from '../components/Home/HomePopularListing'
 // import HomeWorks from '../components/Home/HomeHowItWorks'
 // import HomeExplore from '../components/Home/HomeExplore'
@@ -16,8 +16,8 @@ import HomeFeatured from '../components/Home/HomeFeaturedListings'
 
 export default {
   components: {
-    'home-header': HomeHeader,
-    'home-featured': HomeFeatured
+    'home-header': HomeHeader
+    // 'home-featured': HomeFeatured
     // 'home-popular': HomePopular,
     // 'home-works': HomeWorks,
     // 'home-explore': HomeExplore,

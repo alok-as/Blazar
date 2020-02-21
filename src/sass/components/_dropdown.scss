@@ -17,7 +17,6 @@
     z-index: 10;
 
     &__item{
-        vertical-align: middle;
         &:not(:last-child){
             margin-bottom: .5rem;
         }
@@ -27,6 +26,7 @@
         text-decoration: none;
         color: #444;
         transition: all .1s;
+        display: block;
 
         &:hover{
             color: $color-blue-light;

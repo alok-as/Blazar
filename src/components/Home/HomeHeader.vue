@@ -42,7 +42,7 @@
                         </ul>
                     </li>
                 </ul>
-                <a href="#" class="nav__signup">Sign Up / Register</a>
+                <a href="#" @click="openLogin" class="nav__signup">Sign Up / Register</a>
             </nav>
             <!-- Header Content -->
             <div class="header__content">
@@ -82,11 +82,14 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   methods: {
     searchResults: function () {
       this.$router.push({ name: 'Result' })
-    }
+    },
+    ...mapActions(['openLogin'])
   }
 }
 </script>
