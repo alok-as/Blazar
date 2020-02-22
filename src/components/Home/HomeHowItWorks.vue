@@ -1,6 +1,6 @@
 <template>
     <div class="works">
-        <div class="content works__content">
+        <div class="content">
             <h2 class="heading-2 center">How it works</h2>
             <h3 class="heading-3 center">See why ListingEasy is one of the best friends for exploring the city</h3>
             <div class="works__steps center mt-medium">
@@ -33,12 +33,9 @@ export default {}
 <style lang="scss" scoped>
 .works{
     background-color: white;
-    &__content{
-        padding: 10rem 0;
-    }
     &__steps{
         display: grid;
-        grid-template-columns: repeat(auto-fit,36rem);
+        grid-template-columns: repeat(3,1fr);
         grid-gap: 5rem;
     }
     &__step{
@@ -58,5 +55,10 @@ export default {}
 
 .heading-4{
     margin-bottom: 1rem;
+}
+
+.content{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 </style>
