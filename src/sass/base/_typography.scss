@@ -26,9 +26,17 @@
 .heading-4{
     font-size: 2.2rem;
     font-weight: 500;
+    &--dark{
+        color: $color-blue-dark;
+    }
 }
 
 
 
+.paragraph{
+    color: $color-grey-light;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
 
 

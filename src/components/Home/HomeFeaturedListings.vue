@@ -57,6 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .featured{
+    background-color: white;
     &__content{
         padding: 12rem 0;
     }
@@ -97,6 +98,7 @@ export default {
         font-weight:700;
         text-transform: uppercase;
         transition: all .3s;
+        margin-bottom: .6rem;
 
     }
 
