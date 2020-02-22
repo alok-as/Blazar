@@ -11,15 +11,13 @@
                 </div>
                 <div class="works__step">
                     <img class="works__img" src="../../assets/works-icon.png" alt="Step 1">
-                    <h4 class="heading-4 heading-4--dark">Discover greates places
-                        <p class="paragraph">Search and Find what you are looking for. Best spots are here for you.</p>
-                    </h4>
+                    <h4 class="heading-4 heading-4--dark">Discover greates places</h4>
+                    <p class="paragraph">Search and Find what you are looking for. Best spots are here for you.</p>
                 </div>
                 <div class="works__step">
                     <img class="works__img" src="../../assets/works-icon.png" alt="Step 1">
-                    <h4 class="heading-4 heading-4--dark">Discover greates places
-                        <p class="paragraph">Search and Find what you are looking for. Best spots are here for you.</p>
-                    </h4>
+                    <h4 class="heading-4 heading-4--dark">Discover greates places</h4>
+                    <p class="paragraph">Search and Find what you are looking for. Best spots are here for you.</p>
                 </div>
             </div>
         </div>

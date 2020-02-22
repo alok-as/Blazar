@@ -5,12 +5,14 @@
       <scroll-nav v-if="showNav"></scroll-nav>
     </transition>
     <router-view></router-view>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import Login from './components/Shared/Login'
 import ScrollNav from './components/Shared/Navbar'
+import Footer from './components/Shared/Footer'
 export default {
   data () {
     return {
@@ -19,7 +21,8 @@ export default {
   },
   components: {
     'app-login': Login,
-    'scroll-nav': ScrollNav
+    'scroll-nav': ScrollNav,
+    'app-footer': Footer
   },
   methods: {
     testscroll () {

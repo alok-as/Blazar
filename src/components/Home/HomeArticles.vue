@@ -6,6 +6,12 @@
             <div class="articles__list">
                 <article-card v-for="result in results" :key='result.id' :result="result"></article-card>
             </div>
+            <button class="btn mt-medium">
+                See All
+                <svg>
+                    <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
+                </svg>
+            </button>
         </div>
     </div>
 </template>
@@ -65,5 +71,10 @@ export default {
     &__text{
         color: #fbaf2a !important;
     }
+}
+
+.btn {
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>

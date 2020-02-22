@@ -22,7 +22,6 @@
             <result-map></result-map>
           </div>
         </main>
-        <app-footer></app-footer>
     </div>
 </template>
 
@@ -30,14 +29,12 @@
 import Navbar from '../components/Shared/Navbar'
 import ResultCard from '../components/Result/ResultCard'
 import ResultMap from '../components/Result/ResultMap'
-import Footer from '../components/Shared/Footer'
 
 export default {
   components: {
     'app-navbar': Navbar,
     'result-map': ResultMap,
-    'result-card': ResultCard,
-    'app-footer': Footer
+    'result-card': ResultCard
   },
   computed: {
     searchCategory: {

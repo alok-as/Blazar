@@ -5,6 +5,7 @@
     <home-works></home-works>
     <home-explore></home-explore>
     <home-articles></home-articles>
+    <home-join-us></home-join-us>
   </div>
 </template>
 
@@ -15,7 +16,7 @@ import HomeFeatured from '../components/Home/HomeFeaturedListings'
 import HomeWorks from '../components/Home/HomeHowItWorks'
 import HomeExplore from '../components/Home/HomeExplore'
 import HomeArticles from '../components/Home/HomeArticles'
-// import HomeJoinUs from '../components/Home/HomeJoinus'
+import HomeJoinUs from '../components/Home/HomeJoinus'
 
 export default {
   components: {
@@ -24,8 +25,8 @@ export default {
     // 'home-popular': HomePopular
     'home-works': HomeWorks,
     'home-explore': HomeExplore,
-    'home-articles': HomeArticles
-    // 'home-joinus': HomeJoinUs
+    'home-articles': HomeArticles,
+    'home-join-us': HomeJoinUs
   }
 }
 
