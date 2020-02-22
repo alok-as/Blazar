@@ -3,15 +3,15 @@
         <app-navbar></app-navbar>
         <main>
           <div class="results__list">
-            <form class="form">
-              <div class="select">
-                <div class="select__selected">All Regions</div>
-              </div>
-              <div class="select">
-                <div class="select__selected">Any Category</div>
-              </div>
-              <div class="select">
-                <div class="select__selected">Filter by Tags</div>
+            <form class="results__form">
+              <div class="custom-select">
+                <input type="text" class="custom-select__selected" v-model="searchCategory">
+                <ul class="custom-select__options">
+                  <li class="custom-select__option">East Village</li>
+                  <li class="custom-select__option">West Village</li>
+                  <li class="custom-select__option">North Village</li>
+                  <li class="custom-select__option">South Village</li>
+                </ul>
               </div>
             </form>
             <div class="cards mt-medium">
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="results__map">
-            Place for Google Maps
+            <result-map></result-map>
           </div>
         </main>
         <app-footer></app-footer>
@@ -29,13 +29,33 @@
 <script>
 import Navbar from '../components/Shared/Navbar'
 import ResultCard from '../components/Result/ResultCard'
+import ResultMap from '../components/Result/ResultMap'
 import Footer from '../components/Shared/Footer'
 
 export default {
   components: {
     'app-navbar': Navbar,
+    'result-map': ResultMap,
     'result-card': ResultCard,
     'app-footer': Footer
+  },
+  computed: {
+    searchCategory: {
+      get () {
+        return this.$store.getters.searchCategory
+      }
+      // set (value) {
+      //   this.$store.dispatch('setCategory', value)
+      // }
+    },
+    searchLocation: {
+      get () {
+        return this.$store.getters.searchLocation
+      }
+      // set (value) {
+      //   this.$store.dispatch('setLocation', value)
+      // }
+    }
   },
   data () {
     return {
@@ -81,6 +101,10 @@ main{
   @include clearfix;
 }
 
+.navigation {
+  position: static;
+}
+
 .results{
   &__list{
     width: 55%;
@@ -93,34 +117,13 @@ main{
     width: 45%;
     height: 100%;
     right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: orangered;
-    color: white;
   }
-}
 
-.form{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-gap: 2rem;
-}
-
-.select{
-  &__selected{
-    &::after{
-      content: "";
-      width: 3rem;
-      height: 3rem;
-      background-color: $color-blue-light;
-      -webkit-mask-image: url(../assets/SVG/chevron-small-down.svg);
-      mask-image: url(../assets/SVG/chevron-small-down.svg);
-      -webkit-mask-size: cover;
-      mask-size: cover;
-      position: absolute;
-      right: 2rem;
-    }
+  &__form{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    // grid-template-columns: repeat(auto-fit,22rem);
+    grid-gap: 2rem;
   }
 }
 

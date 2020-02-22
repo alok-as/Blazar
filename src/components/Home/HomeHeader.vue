@@ -3,7 +3,7 @@
         <div class="content">
             <!-- Header Navigation -->
             <nav class="nav">
-                <div class="nav__logo">Listing <sup>easy</sup></div>
+                <div class="nav__logo" @click="toHome">Listing <sup>easy</sup></div>
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a href="#" class="nav__link">Home</a>
@@ -48,28 +48,8 @@
             <div class="header__content">
                 <h1 class="heading-1">Find the best place to be</h1>
                 <h3 class="heading-3 heading-3--light header__heading-3">ListingEasy is the hassle-free way of discovering the city</h3>
-                <form class="form">
-                    <input type="text" list="category" class="form__control" placeholder="What are you looking for?">
-                    <datalist id="category">
-                        <option value="Beauty">Beauty</option>
-                        <option value="Fitness">Fitness</option>
-                        <option value="Finances">Finances</option>
-                        <option value="Health">Health</option>
-                        <option value="Plant">Plant</option>
-                    </datalist>
-
-                    <input type="text" list="location" class="form__control" placeholder="Any Category">
-                    <datalist id="location">
-                        <option value="Delhi">Delhi</option>
-                        <option value="Mumbai">Mumbai</option>
-                    </datalist>
-                    <button class="btn" @click="searchResults">
-                        Search
-                        <svg>
-                            <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
-                        </svg>
-                    </button>
-                </form>
+                <!-- Header search box -->
+                <header-search></header-search>
                 <div class="header__tags">
                     <p>Popular:</p>
                     <p>Food &amp; Drink</p>
@@ -83,13 +63,16 @@
 
 <script>
 import { mapActions } from 'vuex'
-
+import SearchBox from './HomeSearch.Box'
 export default {
+  components: {
+    'header-search': SearchBox
+  },
   methods: {
-    searchResults: function () {
-      this.$router.push({ name: 'Result' })
-    },
-    ...mapActions(['openLogin'])
+    ...mapActions(['openLogin']),
+    toHome () {
+      this.$router.push({ path: '/' })
+    }
   }
 }
 </script>
@@ -147,6 +130,7 @@ export default {
         color: $color-white;
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         sup{
             font-weight: 300;
@@ -237,33 +221,6 @@ export default {
                     mask-image: url(../../assets/SVG/add-user.svg);
                     -webkit-mask-size: cover;
                     mask-size: cover;
-        }
-    }
-}
-
-.form{
-    background-color: $color-white;
-    border-radius: 100px;
-    padding: .3rem;
-    padding-left: 3rem;
-    max-width: 85%;
-    margin: 3.5rem auto 0 auto;
-    display: grid;
-    grid-template-columns: 3fr 2fr 2fr;
-    grid-gap: 1.5rem;
-
-    &__control{
-        background:none;
-        border: none;
-        outline: none;
-        font-family: inherit;
-        font-size: 1.6rem;
-        &::-webkit-calendar-picker-indicator{
-            display: none;
-        }
-
-        &::placeholder{
-            color: #444;
         }
     }
 }

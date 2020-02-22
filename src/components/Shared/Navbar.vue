@@ -41,18 +41,20 @@
                         </ul>
                     </li>
                 </ul>
-                <a href="#" class="nav__signup">Sign Up / Register</a>
+                <a href="#" @click="openLogin" class="nav__signup">Sign Up / Register</a>
             </nav>
         </div>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   methods: {
     toHome: function () {
       this.$router.push({ path: '/' })
-    }
+    },
+    ...mapActions(['openLogin'])
   }
 }
 </script>
@@ -61,7 +63,11 @@ export default {
 .navigation{
     border-bottom:1px solid $color-blue-light;
     box-shadow: 0 .5rem .5rem rgba($color: #000000, $alpha: 0.04);
-    z-index: 25;
+    background: white;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    transition: all .3s ease-in;
 }
 .nav{
     padding: 2.5rem 0;

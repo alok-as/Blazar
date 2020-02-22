@@ -5,12 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    showLogin: false
+    showLogin: false,
+    search: {
+      category: '',
+      location: ''
+    }
   },
   getters: {
     showLogin: state => {
       return state.showLogin
-    }
+    },
+    searchCategory: state => state.search.category,
+    searchLocation: state => state.search.location
   },
   mutations: {
     openLogin: state => {
@@ -18,6 +24,12 @@ export default new Vuex.Store({
     },
     closeLogin: state => {
       state.showLogin = false
+    },
+    setCategory: (state, payload) => {
+      state.search.category = payload
+    },
+    setLocation: (state, payload) => {
+      state.search.location = payload
     }
   },
   actions: {
@@ -26,6 +38,12 @@ export default new Vuex.Store({
     },
     closeLogin: ({ commit }) => {
       commit('closeLogin')
+    },
+    setCategory: ({ commit }, payload) => {
+      commit('setCategory', payload)
+    },
+    setLocation: ({ commit }, payload) => {
+      commit('setLocation', payload)
     }
   },
   modules: {

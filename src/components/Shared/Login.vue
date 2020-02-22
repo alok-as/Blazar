@@ -31,11 +31,10 @@ export default {
 <style lang="scss" scoped>
 .login{
     width: 100%;
-    height: 100vh;
-    z-index: 1000;
+    height: 100%;
+    z-index: 2000;
     background-color: rgba($color: #000000, $alpha: 0.6);
-    position: absolute;
-    top: 0;
+    position: fixed;
     transition: all .2s;
 
     &__content{
@@ -63,7 +62,6 @@ export default {
         background-color: $color-white;
         display: inline-block;
         border-radius: .8rem;
-        position: relative;
         opacity: 0;
         transform: translateY(-220%);
         transition: all .4s ease-in .5s;
