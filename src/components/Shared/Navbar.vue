@@ -4,40 +4,49 @@
             <nav class="nav">
                 <div class="nav__logo" @click="toHome">Listing <sup>easy</sup></div>
                 <ul class="nav__list">
-                        <li class="nav__item">
-                        <a href="#" class="nav__link">Home</a>
-                        <ul class="dropdown">
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Third Fourth</a></li>
-                        </ul>
-                    </li>
                     <li class="nav__item">
                         <a href="#" class="nav__link">Explore</a>
                         <ul class="dropdown">
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Third Fourth</a></li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">All Listings</router-link>
+                            </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">Category 1</router-link>
+                            </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">Category 2</router-link>
+                            </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">Category 3</router-link>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav__item">
                         <a href="#" class="nav__link">Pages</a>
                         <ul class="dropdown">
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Third Fourth</a></li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="/about">About Us</router-link>
+                            </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="/how-it-works">How it Works</router-link>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav__item">
                         <a href="#" class="nav__link">Tips and Articles</a>
                         <ul class="dropdown">
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">First Second</a></li>
-                            <li class="dropdown__item"><a href="#" class="dropdown__link">Third Fourth</a></li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">All Listings</router-link>
+                            </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">Category 1</router-link>
+                            </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">Category 2</router-link>
+                            </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="">Category 3</router-link>
+                            </li>
                         </ul>
                     </li>
                 </ul>
