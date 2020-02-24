@@ -1,6 +1,6 @@
 <template>
 <div class="map">
-    maps
+    Place for Google Maps
 </div>
 </template>
 <script>
@@ -12,5 +12,9 @@ export default {
 .map{
     width: 100%;
     height: 100%;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

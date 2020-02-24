@@ -4,15 +4,9 @@
         <main>
           <div class="results__list">
             <form class="results__form">
-              <div class="custom-select">
-                <input type="text" class="custom-select__selected" v-model="searchCategory">
-                <ul class="custom-select__options">
-                  <li class="custom-select__option">East Village</li>
-                  <li class="custom-select__option">West Village</li>
-                  <li class="custom-select__option">North Village</li>
-                  <li class="custom-select__option">South Village</li>
-                </ul>
-              </div>
+              <!-- <custom-select :options="options"></custom-select> -->
+              <custom-select2 :options="locations" :type="'Location'"></custom-select2>
+              <custom-select2 :options="categories" :type="'Category'"></custom-select2>
             </form>
             <div class="cards mt-medium">
               <result-card v-for="result in results" :key="result.id" :result="result"></result-card>
@@ -27,14 +21,18 @@
 
 <script>
 import Navbar from '../components/Shared/Navbar'
+// import CustomSelect from '../components/Shared/CustomSelect'
+import CustomSelect2 from '../components/Shared/CustomSelect2'
 import ResultCard from '../components/Result/ResultCard'
 import ResultMap from '../components/Result/ResultMap'
 
 export default {
   components: {
     'app-navbar': Navbar,
-    'result-map': ResultMap,
-    'result-card': ResultCard
+    // 'custom-select': CustomSelect,
+    'custom-select2': CustomSelect2,
+    'result-card': ResultCard,
+    'result-map': ResultMap
   },
   computed: {
     searchCategory: {
@@ -85,7 +83,9 @@ export default {
           tagline: 'Work hard, play hard',
           location: 'East 34th Street 400'
         }
-      ]
+      ],
+      categories: ['Beauty', 'Fitness', 'Finances', 'Health', 'Plants'],
+      locations: ['East Village', 'West Village', 'SOuth Village', 'North Village']
     }
   }
 }
@@ -119,7 +119,6 @@ main{
   &__form{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    // grid-template-columns: repeat(auto-fit,22rem);
     grid-gap: 2rem;
   }
 }

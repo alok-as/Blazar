@@ -7,8 +7,8 @@ export default new Vuex.Store({
   state: {
     showLogin: false,
     search: {
-      category: '',
-      location: ''
+      category: 'Entertainment',
+      location: 'All Regions'
     }
   },
   getters: {
