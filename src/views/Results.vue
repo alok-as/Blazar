@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import Navbar from '../components/Shared/Navbar'
 // import CustomSelect from '../components/Shared/CustomSelect'
 import CustomSelect2 from '../components/Shared/CustomSelect2'
 import ResultCard from '../components/Result/ResultCard'
@@ -28,7 +27,7 @@ import ResultMap from '../components/Result/ResultMap'
 
 export default {
   components: {
-    'app-navbar': Navbar,
+    // 'app-navbar': Navbar,
     // 'custom-select': CustomSelect,
     'custom-select2': CustomSelect2,
     'result-card': ResultCard,
