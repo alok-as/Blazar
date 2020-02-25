@@ -3,7 +3,7 @@
         <div class="custom-select__selected" @click="toggleMenu">
             {{ category }}
             <svg class="custom-select__arrow" :class="{turn:arrow}">
-                <use xlink:href="../../sass/sprites.svg#icon-chevron-small-down"></use>
+                <use xlink:href="../../../sass/sprites.svg#icon-chevron-small-down"></use>
             </svg>
         </div>
         <transition>

@@ -4,9 +4,11 @@
     <page-header :page="page"></page-header>
     <div class="works__content">
       <div class="content">
-        <h2 class="heading-2 center">We work for your business</h2>
-        <h3 class="heading-3 heading-3--dark center">ListingEasy is a great and probably the best place to drop in with your community.</h3>
-        <div class="works__cards mt-medium mb-medium">
+        <div class="center mb-medium">
+          <h2 class="heading-2">We work for your business</h2>
+          <h3 class="heading-3 heading-3--dark">ListingEasy is a great and probably the best place to drop in with your community.</h3>
+        </div>
+        <div class="works__cards mb-medium">
           <card-composition v-for="step in steps" :key="step.id" :step="step"></card-composition>
         </div>
       </div>
@@ -14,7 +16,7 @@
   </div>
 </template>
 <script>
-import PageHeader from '../components/Shared/PagesHeader'
+import PageHeader from '../components/Shared/Pages/PagesHeader'
 import CardCompostion from '../components/Works/WorkCardComposition'
 export default {
   components: {

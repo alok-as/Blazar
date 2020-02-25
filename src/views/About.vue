@@ -2,13 +2,18 @@
   <div class="about">
     <app-navbar></app-navbar>
     <page-header :page="page"></page-header>
+    <main>
+      <about-overview></about-overview>
+    </main>
   </div>
 </template>
 <script>
-import PageHeader from '../components/Shared/PagesHeader'
+import PageHeader from '../components/Shared/Pages/PagesHeader'
+import Overview from '../components/About/AboutOverview'
 export default {
   components: {
-    'page-header': PageHeader
+    'page-header': PageHeader,
+    'about-overview': Overview
   },
   data () {
     return {

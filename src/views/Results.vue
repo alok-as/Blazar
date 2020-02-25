@@ -20,8 +20,8 @@
 </template>
 
 <script>
-// import CustomSelect from '../components/Shared/CustomSelect'
-import CustomSelect2 from '../components/Shared/CustomSelect2'
+// import CustomSelect from '../components/Shared/Custom/CustomSelect'
+import CustomSelect2 from '../components/Shared/Custom/CustomSelect2'
 import ResultCard from '../components/Result/ResultCard'
 import ResultMap from '../components/Result/ResultMap'
 

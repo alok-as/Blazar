@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Login from './components/Shared/Login'
-import ScrollNav from './components/Shared/Navbar'
-import Footer from './components/Shared/Footer'
+import Login from './components/layout/Login'
+import ScrollNav from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 export default {
   data () {
     return {

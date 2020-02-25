@@ -1,17 +1,19 @@
 <template>
     <div class="articles">
         <div class="content articles__content">
-            <h2 class="heading-2 center">Tips &amp; articles</h2>
-            <h3 class="heading-3 heading-3--dark center mb-medium">Browse the latest articles and tips from our blog</h3>
-            <div class="articles__list">
-                <article-card v-for="result in results" :key='result.id' :result="result"></article-card>
-            </div>
-            <button class="btn mt-medium">
-                See All
-                <svg>
-                    <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
-                </svg>
-            </button>
+          <div class="center">
+            <h2 class="heading-2">Tips &amp; articles</h2>
+            <h3 class="heading-3 heading-3--dark mb-medium">Browse the latest articles and tips from our blog</h3>
+          </div>
+          <div class="articles__list">
+              <article-card v-for="result in results" :key='result.id' :result="result"></article-card>
+          </div>
+          <button class="btn mt-medium">
+              See All
+              <svg>
+                  <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
+              </svg>
+          </button>
         </div>
     </div>
 </template>

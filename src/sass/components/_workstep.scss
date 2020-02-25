@@ -1,0 +1,22 @@
+.works{
+    background-color: $color-white;
+    &__steps{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 5rem;
+    }
+
+    &__step{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img{
+        width: 15rem;
+        height: 15rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+}
