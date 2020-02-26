@@ -6,17 +6,31 @@
         grid-gap: 5rem;
     }
 
+
     &__step{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
+    &__photo{
+        position: relative;
+    }
+    
     &__img{
-        width: 15rem;
-        height: 15rem;
+        width: 12rem;
+        height: 12rem;
         display: block;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+    &__index{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $color-blue-light;
+        color: $color-white;
+        padding: .6rem 1.4rem;
+        border-radius: 50%;
+        border: 2px solid $color-white;
     }
 }

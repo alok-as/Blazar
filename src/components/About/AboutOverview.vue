@@ -1,11 +1,11 @@
 <template>
-    <div class="about__overview">
+    <div class="overview">
         <div class="content">
             <div class="center mb-medium">
                 <h2 class="heading-2">Use Listing Easy anywhere</h2>
                 <h3 class="heading-3 heading-3--dark">Explore the greates places in the city. You won’t be disappointed.</h3>
             </div>
-            <div class="about__image mb-medium">
+            <div class="overview__image mb-big">
                 <img src="../../assets/about-2.jpg" alt="Overview">
             </div>
             <div class="works__steps center">
@@ -47,30 +47,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.about{
-    &__overview{
-        background-color: $color-white;
-    }
-    &__steps{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-gap: 5rem;
-    }
-    &__step{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+.overview{
+  background-color: $color-white;
+}
 
-    &__img{
-        width: 15rem;
-        height: 15rem;
-        display: block;
-        margin-bottom: 1rem;
-    }
-}
 .content{
-    padding-top: 8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
+
 </style>

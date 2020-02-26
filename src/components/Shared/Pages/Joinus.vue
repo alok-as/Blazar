@@ -8,7 +8,7 @@
             <button class="btn">
                 Sign Up
                 <svg>
-                    <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
+                    <use xlink:href="../../../sass/sprites.svg#icon-chevron-small-right"></use>
                 </svg>
             </button>
         </div>
@@ -21,8 +21,7 @@ export default {}
 
 <style lang="scss" scoped>
 .join-us{
-    margin-top: 5rem;
-    background-image: url('../../assets/home-join-us.jpg');
+    background-image: url('../../../assets/home-join-us.jpg');
 }
 
 .content{

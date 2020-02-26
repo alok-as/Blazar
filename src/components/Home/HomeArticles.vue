@@ -1,6 +1,6 @@
 <template>
     <div class="articles">
-        <div class="content articles__content">
+        <div class="content">
           <div class="center">
             <h2 class="heading-2">Tips &amp; articles</h2>
             <h3 class="heading-3 heading-3--dark mb-medium">Browse the latest articles and tips from our blog</h3>

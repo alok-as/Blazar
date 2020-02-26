@@ -30,6 +30,9 @@
                             <li class="dropdown__item">
                                 <router-link class="dropdown__link" to="/how-it-works">How it Works</router-link>
                             </li>
+                            <li class="dropdown__item">
+                                <router-link class="dropdown__link" to="/pricing">Pricing</router-link>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav__item">

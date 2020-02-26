@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <home-header></home-header>
-    <home-featured></home-featured>
-    <home-popular></home-popular>
-    <home-works></home-works>
-    <home-explore></home-explore>
-    <home-articles></home-articles>
-    <home-join-us></home-join-us>
+    <main>
+      <home-featured></home-featured>
+      <home-popular></home-popular>
+      <home-works></home-works>
+      <home-explore></home-explore>
+      <home-articles></home-articles>
+      <home-join-us></home-join-us>
+    </main>
   </div>
 </template>
 
@@ -17,7 +19,7 @@ import HomePopular from '../components/Home/HomePopularListing'
 import HomeWorks from '../components/Home/HomeHowItWorks'
 import HomeExplore from '../components/Home/HomeExplore'
 import HomeArticles from '../components/Home/HomeArticles'
-import HomeJoinUs from '../components/Home/HomeJoinus'
+import HomeJoinUs from '../components/Shared/Pages/Joinus'
 
 export default {
   components: {
