@@ -1,13 +1,10 @@
 <template>
-    <div class="popular">
+    <section class="popular">
         <div class="content">
-            <div class="center mb-medium">
-                <h2 class="heading-2">Popular Listings</h2>
-                <h3 class="heading-3">Explore the greates places in the city. You won’t be disappointed.</h3>
-            </div>
+            <section-header :content="content"></section-header>
             <!-- <popular-carousal></popular-carousal> -->
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -15,6 +12,14 @@
 export default {
   components: {
     // 'popular-carousal': Carousal2
+  },
+  data () {
+    return {
+      content: {
+        heading: 'Popular Listings',
+        subheading: 'Explore the greates places in the city. You won’t be disappointed.'
+      }
+    }
   }
 }
 </script>

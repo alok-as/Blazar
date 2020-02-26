@@ -1,10 +1,7 @@
 <template>
-    <div class="articles">
+    <section class="articles">
         <div class="content">
-          <div class="center">
-            <h2 class="heading-2">Tips &amp; articles</h2>
-            <h3 class="heading-3 heading-3--dark mb-medium">Browse the latest articles and tips from our blog</h3>
-          </div>
+          <section-header :content="content"></section-header>
           <div class="articles__list">
               <article-card v-for="result in results" :key='result.id' :result="result"></article-card>
           </div>
@@ -15,7 +12,7 @@
               </svg>
           </button>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -26,6 +23,10 @@ export default {
   },
   data () {
     return {
+      content: {
+        heading: 'Tips & articles',
+        subheading: 'Browse the latest articles and tips from our blog'
+      },
       results: [
         {
           id: 1,

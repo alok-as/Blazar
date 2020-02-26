@@ -1,10 +1,7 @@
 <template>
-    <div class="featured">
+    <section class="featured">
         <div class="content featured__content">
-            <div class="center mb-medium">
-                <h2 class="heading-2 center">Featured Categories</h2>
-                <h3 class="heading-3 heading-3--dark center">Discover New York’s best things to do, restaurants, theatre, nightlife and more</h3>
-            </div>
+            <section-header :content="content"></section-header>
             <div class="featured__gallery">
                 <div class="featured__item">
                     <img class="featured__img" src="../../assets/featured-1.jpg" alt="Featured 1">
@@ -50,10 +47,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 <script>
 export default {
+  data () {
+    return {
+      content: {
+        heading: 'Featured Categories',
+        subheading: 'Discover New York’s best things to do, restaurants, theatre, nightlife and more'
+      }
+    }
+  }
 }
 </script>
 

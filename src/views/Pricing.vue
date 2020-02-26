@@ -1,13 +1,13 @@
 <template>
-    <div class="pricing">
-        <app-navbar></app-navbar>
-        <pricing-header :page="page"></pricing-header>
-        <main>
-            <pricing-plans></pricing-plans>
-            <pricing-message></pricing-message>
-            <pricing-join-us></pricing-join-us>
-        </main>
-    </div>
+  <div class="pricing">
+    <app-navbar></app-navbar>
+    <pricing-header :page="page"></pricing-header>
+    <main>
+        <pricing-plans></pricing-plans>
+        <pricing-message></pricing-message>
+        <pricing-join-us></pricing-join-us>
+    </main>
+  </div>
 </template>
 <script>
 import PricingHeader from '../components/Shared/Pages/PagesHeader'

@@ -62,6 +62,7 @@ export default {
         background-color: $color-white;
         display: inline-block;
         border-radius: .8rem;
+        position: relative;
         opacity: 0;
         transform: translateY(-220%);
         transition: all .4s ease-in .5s;

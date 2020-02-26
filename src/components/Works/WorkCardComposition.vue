@@ -35,6 +35,10 @@ export default {
         transform: scale(1.1);
     }
 
+    &__photo{
+        // order:2;
+    }
+
     &__img{
         width: 100%;
         display: block;
@@ -42,6 +46,7 @@ export default {
     }
     &__content{
         position: relative;
+        // order: 1;
     }
 
     &__card{

@@ -1,10 +1,7 @@
 <template>
     <div class="overview">
         <div class="content">
-            <div class="center mb-medium">
-                <h2 class="heading-2">Use Listing Easy anywhere</h2>
-                <h3 class="heading-3 heading-3--dark">Explore the greates places in the city. You won’t be disappointed.</h3>
-            </div>
+            <section-header :content="content"></section-header>
             <div class="overview__image mb-big">
                 <img src="../../assets/about-2.jpg" alt="Overview">
             </div>
@@ -22,6 +19,10 @@ export default {
   },
   data () {
     return {
+      content: {
+        heading: 'Use Listing Easy anywhere',
+        subheading: 'Explore the greates places in the city. You won’t be disappointed.'
+      },
       steps: [
         {
           id: 1,

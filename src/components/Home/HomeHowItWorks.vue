@@ -1,10 +1,7 @@
 <template>
     <div class="works">
         <div class="content">
-            <div class="center mb-medium">
-                <h2 class="heading-2">How it works</h2>
-                <h3 class="heading-3">See why ListingEasy is one of the best friends for exploring the city</h3>
-            </div>
+            <section-header :content="content"></section-header>
             <div class="works__steps center">
                 <work-step v-for="step in steps" :key="step.id" :step="step"></work-step>
             </div>
@@ -38,7 +35,11 @@ export default {
           title: 'Discover greates places',
           description: 'Search and Find what you are looking for. Best spots are here for you.'
         }
-      ]
+      ],
+      content: {
+        heading: 'How it works',
+        subheading: 'See why ListingEasy is one of the best friends for exploring the city'
+      }
     }
   }
 }

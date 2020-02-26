@@ -1,5 +1,5 @@
 <template>
-    <div class="message">
+    <section class="message">
         <div class="content">
             <div class="message__wrapper">
                 <div class="message__photo">
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 <script>
 export default {

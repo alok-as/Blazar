@@ -1,5 +1,5 @@
 <template>
-    <div class="explore">
+    <section class="explore">
         <div class="content explore__content">
             <img class="explore__logo" src="../../assets/home-explore-logo.png" alt="Mountains Logo">
             <h2 class="explore__title">Hello Easter Day</h2>
@@ -11,7 +11,7 @@
                 </svg>
             </button>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>

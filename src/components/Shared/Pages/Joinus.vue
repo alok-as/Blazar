@@ -1,5 +1,5 @@
 <template>
-    <div class="join-us">
+    <section class="join-us">
         <div class="content">
             <div class="join-us__text">
                 <h2 class="heading-2">Join our community</h2>
@@ -12,7 +12,7 @@
                 </svg>
             </button>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
