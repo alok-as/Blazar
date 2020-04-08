@@ -45,8 +45,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.content{
-  padding-top: 8rem;
-  padding-bottom: 4rem;
-}
+  @import "../../sass/components/about/_overview.scss";
 </style>

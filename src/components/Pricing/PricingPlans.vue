@@ -27,15 +27,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.content{
-    padding-top: 8rem;
-    padding-bottom: 5rem;
-}
-.plans{
-    &__header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
+  @import "../../sass/components/pricing/_plans.scss";
 </style>

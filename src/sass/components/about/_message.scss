@@ -1,0 +1,22 @@
+.message{
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(35rem,1fr));
+        grid-gap: 5rem;
+    }
+
+    &__image{
+        width: 100%;
+    }
+
+    .paragraph{
+        margin-bottom: 4rem;
+        span{
+            color: $color-blue-light;
+        }
+    }
+}
+.content{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}

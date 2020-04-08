@@ -1,0 +1,32 @@
+.explore{
+    background-image: url('../../assets/home-explore.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $color-white;
+    }
+
+    &__logo{
+        height: 10rem;
+        margin: 3rem 0;
+    }
+
+    &__title{
+        font-size: 7.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    &__paragraph{
+        font-size: 1.8rem;
+        span{
+            color: #fbaf2a;
+            font-weight: 600;
+        }
+    }
+}

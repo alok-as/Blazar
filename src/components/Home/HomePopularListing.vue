@@ -24,8 +24,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.content{
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-}
+  @import "../../sass/components/home/_popular.scss";
 </style>

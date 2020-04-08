@@ -14,16 +14,22 @@
             <option value="Delhi">Delhi</option>
             <option value="Mumbai">Mumbai</option>
         </datalist>
-        <button class="btn" @click="searchResults">
+        <!-- <button class="btn" @click="searchResults">
             Search
             <svg>
                 <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
             </svg>
-        </button>
+        </button> -->
+        <callToAction :text="'Learn More'"></callToAction>
     </form>
 </template>
 <script>
+import callToAction from '../UI/button'
+
 export default {
+  components: {
+    callToAction
+  },
   methods: {
     searchResults: function () {
       this.$router.push({ name: 'Result', query: { searchCategory: this.searchCategory, searchLocation: this.searchLocation } })
@@ -50,30 +56,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.form{
-    background-color: $color-white;
-    border-radius: 100px;
-    padding: .3rem;
-    padding-left: 3rem;
-    max-width: 85%;
-    margin: 3.5rem auto 0 auto;
-    display: grid;
-    grid-template-columns: 3fr 2fr 2fr;
-    grid-gap: 1.5rem;
-
-    &__control{
-        background:none;
-        border: none;
-        outline: none;
-        font-family: inherit;
-        font-size: 1.6rem;
-        &::-webkit-calendar-picker-indicator{
-            display: none;
-        }
-
-        &::placeholder{
-            color: #444;
-        }
-    }
-}
+  @import "../../sass/components/home/_searchbox.scss";
 </style>

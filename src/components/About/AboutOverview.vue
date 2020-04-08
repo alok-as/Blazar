@@ -48,13 +48,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.overview{
-  background-color: $color-white;
-}
-
-.content{
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
+  @import "../../sass/components/about/_overview.scss";
 </style>

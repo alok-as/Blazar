@@ -19,20 +19,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.content{
-    padding-top: 8rem;
-    padding-bottom: 6rem;
-}
-.message{
-    background-color: $color-white;
-    &__wrapper{
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
-        grid-gap: 4rem;
-    }
-    &__image{
-        width: 100%;
-    }
-
-}
+  @import "../../sass/components/pricing/_message.scss";
 </style>

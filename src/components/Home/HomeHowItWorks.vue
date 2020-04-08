@@ -46,12 +46,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.heading-4{
-    margin-bottom: 1rem;
-}
-
-.content{
-    padding-top: 10rem;
-    padding-bottom: 14rem;
-}
+  @import "../../sass/components/home/_works.scss";
 </style>

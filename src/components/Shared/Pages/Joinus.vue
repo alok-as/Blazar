@@ -5,18 +5,19 @@
                 <h2 class="heading-2">Join our community</h2>
                 <p class="paragraph">Grow your marketing and be happy with your business</p>
             </div>
-            <button class="btn">
-                Sign Up
-                <svg>
-                    <use xlink:href="../../../sass/sprites.svg#icon-chevron-small-right"></use>
-                </svg>
-            </button>
+            <callToAction :text="'Join Us'"></callToAction>
         </div>
     </section>
 </template>
 
 <script>
-export default {}
+import callToAction from '../../UI/button'
+
+export default {
+  components: {
+    callToAction
+  }
+}
 </script>
 
 <style lang="scss" scoped>

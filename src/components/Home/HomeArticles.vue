@@ -5,21 +5,22 @@
           <div class="articles__list">
               <article-card v-for="result in results" :key='result.id' :result="result"></article-card>
           </div>
-          <button class="btn mt-medium">
-              See All
-              <svg>
-                  <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
-              </svg>
-          </button>
+          <div class="temp">
+            <callToAction :text="'See All'"  class="mt-medium"></callToAction>
+          </div>
         </div>
     </section>
 </template>
 
 <script>
 import Article from '../Result/ResultCard'
+import callToAction from '../UI/button'
+
 export default {
   components: {
-    'article-card': Article
+    'article-card': Article,
+    callToAction
+
   },
   data () {
     return {
@@ -56,28 +57,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.articles{
-    &__list{
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
-        grid-gap: 3rem;
-    }
-}
-
-.content{
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-}
-
-.card {
-    &__text{
-        color: #fbaf2a !important;
-    }
-}
-
-.btn {
-    margin-left: auto;
-    margin-right: auto;
-}
+  @import "../../sass/components/home/_articles.scss";
 </style>

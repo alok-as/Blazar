@@ -1,0 +1,24 @@
+.articles{
+    &__list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+        grid-gap: 3rem;
+    }
+}
+
+.content{
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.card {
+    &__text{
+        color: #fbaf2a !important;
+    }
+}
+
+.temp {
+    max-width: max-content;
+    margin: 0 auto;
+}
