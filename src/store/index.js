@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import database from '../firebase/firebase'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -9,14 +9,19 @@ export default new Vuex.Store({
     search: {
       category: 'Entertainment',
       location: 'All Regions'
-    }
+    },
+    results: []
   },
   getters: {
     showLogin: state => {
       return state.showLogin
     },
     searchCategory: state => state.search.category,
-    searchLocation: state => state.search.location
+    searchLocation: state => state.search.location,
+    resultsArr: state => {
+      state.results = JSON.parse(localStorage.getItem('results'))
+      return state.results
+    }
   },
   mutations: {
     openLogin: state => {
@@ -30,6 +35,9 @@ export default new Vuex.Store({
     },
     setLocation: (state, payload) => {
       state.search.location = payload
+    },
+    persistResults: (state, results) => {
+     localStorage.setItem('results',JSON.stringify(results))
     }
   },
   actions: {
@@ -44,6 +52,23 @@ export default new Vuex.Store({
     },
     setLocation: ({ commit }, payload) => {
       commit('setLocation', payload)
+    },
+    fetchResults: ({ commit, state}) => {
+      const temp = []
+      database.collection('cafes').get().then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          const item = {
+            id: doc.id,
+            img: doc.data().img,
+            title: doc.data().title,
+            tagline: doc.data().tagline,
+            location: doc.data().location
+          }
+          console.log(item)
+          temp.push(item)
+        })
+        commit('persistResults', temp)
+      })
     }
   },
   modules: {

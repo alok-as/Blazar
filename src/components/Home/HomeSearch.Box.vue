@@ -14,25 +14,32 @@
             <option value="Delhi">Delhi</option>
             <option value="Mumbai">Mumbai</option>
         </datalist>
-        <!-- <button class="btn" @click="searchResults">
+        <button class="btn" @click.prevent="searchResults">
             Search
             <svg>
                 <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
             </svg>
-        </button> -->
-        <callToAction :text="'Learn More'"></callToAction>
+        </button>
+        <!-- <callToAction @click.native.prevent="searchResults" :text="'Learn More'"></callToAction> -->
     </form>
 </template>
 <script>
-import callToAction from '../UI/button'
+// import callToAction from '../UI/button'
 
 export default {
-  components: {
-    callToAction
-  },
+  // components: {
+  //   callToAction
+  // },
   methods: {
-    searchResults: function () {
-      this.$router.push({ name: 'Result', query: { searchCategory: this.searchCategory, searchLocation: this.searchLocation } })
+    searchResults () {
+      this.$router.replace({
+        name: 'Result',
+        query: {
+          searchCategory: this.searchCategory,
+          searchLocation: this.searchLocation
+        }
+      })
+      this.$store.dispatch('fetchResults')
     }
   },
   computed: {
