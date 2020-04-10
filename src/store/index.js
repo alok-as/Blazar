@@ -7,8 +7,11 @@ export default new Vuex.Store({
   state: {
     showLogin: false,
     search: {
-      category: 'Entertainment',
-      location: 'All Regions'
+      category: '',
+      location: '',
+      validSearch: false,
+      categories: ['Beauty', 'Fitness', 'Finances', 'Health', 'Plants & Deco'],
+      locations: ['Delhi', 'Mumbai', 'Kolkata', 'Pune']
     },
     results: []
   },
@@ -16,11 +19,19 @@ export default new Vuex.Store({
     showLogin: state => {
       return state.showLogin
     },
-    searchCategory: state => state.search.category,
-    searchLocation: state => state.search.location,
+    getCategory: state => state.search.category,
+    getLocation: state => state.search.location,
+    getCategories: state => state.search.categories,
+    getLocations: state => state.search.locations,
     resultsArr: state => {
       state.results = JSON.parse(localStorage.getItem('results'))
       return state.results
+    },
+    validSearch: (state, getters) => {
+      if (state.search.categories.includes(getters.getCategory) && state.search.locations.includes(getters.getLocation) ){
+        return !state.search.validSearch
+      }
+      return state.search.validSearch
     }
   },
   mutations: {
@@ -30,14 +41,14 @@ export default new Vuex.Store({
     closeLogin: state => {
       state.showLogin = false
     },
-    setCategory: (state, payload) => {
-      state.search.category = payload
+    setCategory: (state, newCategory) => {
+      state.search.category = newCategory
     },
-    setLocation: (state, payload) => {
-      state.search.location = payload
+    setLocation: (state, newLocation) => {
+      state.search.location = newLocation
     },
     persistResults: (state, results) => {
-     localStorage.setItem('results',JSON.stringify(results))
+      localStorage.setItem('results', JSON.stringify(results))
     }
   },
   actions: {
@@ -47,13 +58,7 @@ export default new Vuex.Store({
     closeLogin: ({ commit }) => {
       commit('closeLogin')
     },
-    setCategory: ({ commit }, payload) => {
-      commit('setCategory', payload)
-    },
-    setLocation: ({ commit }, payload) => {
-      commit('setLocation', payload)
-    },
-    fetchResults: ({ commit, state}) => {
+    fetchResults: ({ commit, state }) => {
       const temp = []
       database.collection('cafes').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
@@ -70,7 +75,5 @@ export default new Vuex.Store({
         commit('persistResults', temp)
       })
     }
-  },
-  modules: {
   }
 })

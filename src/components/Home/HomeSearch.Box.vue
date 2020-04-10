@@ -1,35 +1,28 @@
 <template>
     <form class="form">
+        <!-- Categories -->
         <input type="text" list="category" class="form__control" v-model="searchCategory" placeholder="What are you looking for?">
         <datalist id="category">
-            <option value="Beauty">Beauty</option>
-            <option value="Fitness">Fitness</option>
-            <option value="Finances">Finances</option>
-            <option value="Health">Health</option>
-            <option value="Plant">Plant</option>
+          <option v-for="category in searchCategories" :key="category">{{category}}</option>
         </datalist>
 
+        <!-- Locations -->
         <input type="text" list="location" class="form__control" v-model="searchLocation" placeholder="Location">
         <datalist id="location">
-            <option value="Delhi">Delhi</option>
-            <option value="Mumbai">Mumbai</option>
+          <option v-for="location in searchLocations" :key="location">{{location}}</option>
         </datalist>
-        <button class="btn" @click.prevent="searchResults">
+
+        <button class="btn" @click="searchResults" :disabled="validSearch">
             Search
             <svg>
                 <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
             </svg>
         </button>
-        <!-- <callToAction @click.native.prevent="searchResults" :text="'Learn More'"></callToAction> -->
     </form>
 </template>
 <script>
-// import callToAction from '../UI/button'
 
 export default {
-  // components: {
-  //   callToAction
-  // },
   methods: {
     searchResults () {
       this.$router.replace({
@@ -45,19 +38,29 @@ export default {
   computed: {
     searchCategory: {
       get () {
-        return this.$store.getters.searchCategory
+        return this.$store.getters.getCategory
       },
       set (value) {
-        this.$store.dispatch('setCategory', value)
+        this.$store.commit('setCategory', value)
       }
     },
     searchLocation: {
       get () {
-        return this.$store.getters.searchLocation
+        return this.$store.getters.getLocation
       },
       set (value) {
-        this.$store.dispatch('setLocation', value)
+        this.$store.commit('setLocation', value)
       }
+    },
+    searchCategories () {
+      return this.$store.getters.getCategories
+    },
+    searchLocations () {
+      return this.$store.getters.getLocations
+    },
+    validSearch () {
+      let valid = this.$store.getters.validSearch
+      return !valid;
     }
   }
 }

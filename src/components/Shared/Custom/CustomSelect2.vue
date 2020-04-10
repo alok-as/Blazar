@@ -9,7 +9,7 @@
         <transition>
             <div class="custom-select__items" v-if="open">
                 <div class="custom-select__search">
-                    <input ref="filter" class="custom-select__control" type="text" v-model="filterSearch" placeholder="All Categories">
+                    <input ref="filter" class="custom-select__control" type="text" v-model="filterSearch" :placeholder="type">
                 </div>
                 <div class="custom-select__item" v-for="(option, index) in filteredOptions" :key="index" @click="setCategory(option); closeMenu()">{{ option }}</div>
             </div>
@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     category () {
-      return this.$store.getters.searchCategory
+      return this.type === 'Locations' ? this.$store.getters.getLocation : this.$store.getters.getCategory
     },
     filteredOptions () {
       return this.options.filter((element) => {
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     setCategory (value) {
-      this.$store.dispatch('setCategory', value)
+      this.$store.commit('setCategory', value)
     },
     closeMenu () {
       this.open = false

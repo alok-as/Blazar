@@ -4,9 +4,8 @@
         <main>
           <div class="results__list">
             <form class="results__form">
-              <!-- <custom-select :options="options"></custom-select> -->
-              <custom-select2 :options="locations" :type="'Location'"></custom-select2>
-              <custom-select2 :options="categories" :type="'Category'"></custom-select2>
+              <custom-select2 :options="searchLocations" :type="'Locations'"></custom-select2>
+              <custom-select2 :options="searchCategories" :type="'Categories'"></custom-select2>
             </form>
             <div class="cards mt-medium">
               <result-card v-for="result in allResults" :key="result.id" :result="result"></result-card>
@@ -20,15 +19,12 @@
 </template>
 
 <script>
-// import CustomSelect from '../components/Shared/Custom/CustomSelect'
 import CustomSelect2 from '../components/Shared/Custom/CustomSelect2'
 import ResultCard from '../components/Result/ResultCard'
 import ResultMap from '../components/Result/ResultMap'
 
 export default {
   components: {
-    // 'app-navbar': Navbar,
-    // 'custom-select': CustomSelect,
     'custom-select2': CustomSelect2,
     'result-card': ResultCard,
     'result-map': ResultMap
@@ -36,22 +32,22 @@ export default {
   computed: {
     searchCategory: {
       get () {
-        return this.$store.getters.searchCategory
+        return this.$store.getters.getCategory
       }
-      // set (value) {
-      //   this.$store.dispatch('setCategory', value)
-      // }
     },
     searchLocation: {
       get () {
-        return this.$store.getters.searchLocation
+        return this.$store.getters.getLocation
       }
-      // set (value) {
-      //   this.$store.dispatch('setLocation', value)
-      // }
     },
-    allResults() {
+    allResults () {
       return this.$store.getters.resultsArr
+    },
+    searchCategories () {
+      return this.$store.getters.getCategories
+    },
+    searchLocations () {
+      return this.$store.getters.getLocations
     }
   },
   data () {
