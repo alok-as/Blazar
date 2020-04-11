@@ -31,5 +31,6 @@ export default {
 <style lang="scss" scoped>
 .navigation{
   position: static;
+  transform: translateY(0);
 }
 </style>

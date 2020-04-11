@@ -3,7 +3,7 @@
         <div class="content">
           <section-header :content="content"></section-header>
           <div class="articles__list">
-              <article-card v-for="result in results" :key='result.id' :result="result"></article-card>
+              <article-card v-for="article in articles" :key="article.id" :content="article"></article-card>
           </div>
           <div class="temp">
             <callToAction :text="'See All'"  class="mt-medium"></callToAction>
@@ -13,14 +13,13 @@
 </template>
 
 <script>
-import Article from '../Result/ResultCard'
+import Article from '../UI/article'
 import callToAction from '../UI/button'
 
 export default {
   components: {
     'article-card': Article,
     callToAction
-
   },
   data () {
     return {
@@ -28,27 +27,27 @@ export default {
         heading: 'Tips & articles',
         subheading: 'Browse the latest articles and tips from our blog'
       },
-      results: [
+      articles: [
         {
           id: 1,
-          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/honey_coffee-800x600.jpg',
+          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/blog_post1-600x800.jpg',
+          category: 'Health and Wellness',
           title: 'The Best SPA Salons For Your Relaxation',
-          tagline: 'This cafe is small but bustling',
-          location: '98 E 7th St, New York'
+          date: 'October 8, 2019 by Steve'
         },
         {
           id: 2,
-          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/liberty_club-800x600.jpg',
+          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/blog7-600x800.jpg',
+          category: 'Culture, Tips & Tricks',
           title: 'The Best Music For Your Entertainment',
-          tagline: '4 star hotel by the valley in NY',
-          location: 'West 14th Street 11'
+          date: 'April 6, 2020 by Julia'
         },
         {
           id: 3,
-          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/honey_coffee-800x600.jpg',
+          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/blog5-600x800.jpg',
+          category: 'Culture, Tips & Tricks',
           title: 'How to Wear a Headscarf Like a Gucci Muse',
-          tagline: 'Wild Savour from Africa',
-          location: 'Clay Street 111'
+          date: 'April 16, 2020 by Henry'
         }
       ]
     }

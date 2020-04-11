@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <app-login v-if="showModal"></app-login>
+    <app-login v-show="showModal"></app-login>
     <transition name="fade">
-      <scroll-nav v-if="showNav"></scroll-nav>
+      <scroll-nav></scroll-nav>
     </transition>
     <router-view></router-view>
     <app-footer></app-footer>
@@ -26,10 +26,11 @@ export default {
   },
   methods: {
     testscroll () {
-      if (window.scrollY > 500) {
-        this.showNav = true
+      const navigation = document.querySelector('.navigation')
+      if (window.scrollY > 100) {
+        navigation.style.transform = 'translateY(0)'
       } else {
-        this.showNav = false
+        navigation.style.transform = 'translateY(-100%)'
       }
     }
   },

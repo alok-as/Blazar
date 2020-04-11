@@ -73,13 +73,13 @@ export default {
 
 <style lang="scss" scoped>
 .navigation{
-    border-bottom:1px solid $color-blue-light;
-    box-shadow: 0 .5rem .5rem rgba($color: #000000, $alpha: 0.04);
+    box-shadow: 1px 0 10px rgba(0, 0, 0, .1);
     background: white;
     width: 100%;
     position: fixed;
     z-index: 1000;
-    transition: all .3s ease-in;
+    transition: all .3s ease;
+    transform: translateY(-100%);
 }
 .nav{
     padding: 2.5rem 0;

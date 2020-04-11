@@ -30,16 +30,6 @@ export default {
     'result-map': ResultMap
   },
   computed: {
-    searchCategory: {
-      get () {
-        return this.$store.getters.getCategory
-      }
-    },
-    searchLocation: {
-      get () {
-        return this.$store.getters.getLocation
-      }
-    },
     allResults () {
       return this.$store.getters.resultsArr
     },
@@ -49,6 +39,9 @@ export default {
     searchLocations () {
       return this.$store.getters.getLocations
     }
+  },
+  created() {
+    this.$store.commit('getLocalResults')
   },
   data () {
     return {
@@ -68,6 +61,7 @@ main{
 
 .navigation {
   position: static;
+  transform: translateY(0);
 }
 
 .results{

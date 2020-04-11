@@ -32,7 +32,7 @@ export default {
           searchLocation: this.searchLocation
         }
       })
-      this.$store.dispatch('fetchResults')
+      this.$store.dispatch('fetchResults', this.searchCategory)
     }
   },
   computed: {

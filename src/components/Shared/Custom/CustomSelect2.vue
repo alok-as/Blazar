@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     setCategory (value) {
-      this.$store.commit('setCategory', value)
+      this.type === 'Locations' ? this.$store.commit('setLocation', value) : this.$store.commit('setCategory', value) 
     },
     closeMenu () {
       this.open = false
@@ -50,6 +50,11 @@ export default {
     toggleMenu () {
       this.open = !this.open
       this.close = !this.close
+    }
+  },
+  watch: {
+    category (newCategory, oldCategory) {
+      this.$store.dispatch('fetchResults',newCategory)
     }
   }
 }

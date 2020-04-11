@@ -10,7 +10,7 @@ export default new Vuex.Store({
       category: '',
       location: '',
       validSearch: false,
-      categories: ['Beauty', 'Fitness', 'Finances', 'Health', 'Plants & Deco'],
+      categories: ['Food & cafes', 'Hotels & Hostels', 'Finances', 'Health', 'Plants & Deco'],
       locations: ['Delhi', 'Mumbai', 'Kolkata', 'Pune']
     },
     results: []
@@ -19,16 +19,23 @@ export default new Vuex.Store({
     showLogin: state => {
       return state.showLogin
     },
-    getCategory: state => state.search.category,
-    getLocation: state => state.search.location,
+    getCategory: state => {
+      if (localStorage.getItem('category') !== null){
+        state.search.category = JSON.parse(localStorage.getItem('category'))
+      }
+      return state.search.category
+    },
+    getLocation: state => {
+      if (localStorage.getItem('location') !== null){
+        state.search.location = JSON.parse(localStorage.getItem('location'))
+      }
+      return state.search.location
+    },
     getCategories: state => state.search.categories,
     getLocations: state => state.search.locations,
-    resultsArr: state => {
-      state.results = JSON.parse(localStorage.getItem('results'))
-      return state.results
-    },
+    resultsArr: state => state.results, 
     validSearch: (state, getters) => {
-      if (state.search.categories.includes(getters.getCategory) && state.search.locations.includes(getters.getLocation) ){
+      if (state.search.categories.includes(getters.getCategory) && state.search.locations.includes(getters.getLocation)) {
         return !state.search.validSearch
       }
       return state.search.validSearch
@@ -43,12 +50,20 @@ export default new Vuex.Store({
     },
     setCategory: (state, newCategory) => {
       state.search.category = newCategory
+      localStorage.setItem('category',JSON.stringify(newCategory))
     },
     setLocation: (state, newLocation) => {
       state.search.location = newLocation
+      localStorage.setItem('location', JSON.stringify(newLocation))
     },
-    persistResults: (state, results) => {
+    getResults: (state, results) => {
       localStorage.setItem('results', JSON.stringify(results))
+      state.results = results
+    },
+    getLocalResults: (state) => {
+      if(localStorage.getItem('results') !== null) {
+        state.results = JSON.parse(localStorage.getItem('results'))
+      }
     }
   },
   actions: {
@@ -58,9 +73,9 @@ export default new Vuex.Store({
     closeLogin: ({ commit }) => {
       commit('closeLogin')
     },
-    fetchResults: ({ commit, state }) => {
+    fetchResults: ({ commit, state }, collection) => {
       const temp = []
-      database.collection('cafes').get().then(snapshot => {
+      database.collection(collection).get().then(snapshot => {
         snapshot.docs.forEach(doc => {
           const item = {
             id: doc.id,
@@ -69,10 +84,10 @@ export default new Vuex.Store({
             tagline: doc.data().tagline,
             location: doc.data().location
           }
-          console.log(item)
           temp.push(item)
         })
-        commit('persistResults', temp)
+        console.log(temp)
+        commit('getResults', temp)
       })
     }
   }

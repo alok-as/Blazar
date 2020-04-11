@@ -1,23 +1,60 @@
 <template>
-    <section class="popular">
-        <div class="content">
+    <section class='popular'>
+        <div class='content'>
             <section-header :content="content"></section-header>
+            <div class='popular__list'>
+              <popular-card v-for="item in popularItems" :key="item.id" :result="item"></popular-card>
+            </div>
         </div>
     </section>
 </template>
 
 <script>
+import Card from '../Result/ResultCard'
 export default {
+  components: {
+    'popular-card': Card
+  },
   data () {
     return {
       content: {
         heading: 'Popular Listings',
-        subheading: 'Explore the greates places in the city. You won’t be disappointed.'
-      }
+        subheading: 'Explore the greates places in the city. You won’t be disappointed.',
+      },
+      popularItems: [
+        {
+          id: '1U37qVsu3zHZQXZhQQWL',
+          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/moonlight_hotels-800x600.jpg',
+          title: 'Moonlight Hotel',
+          tagline: '4 star hotel by the valley in NY',
+          location: 'Greenwich Street'
+        },
+        {
+          id: '3Rz3DJ09KhlJhKqB2uXN',
+          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/grand_hotel-800x600.jpg',
+          title: 'Grand Hotel',
+          tagline: 'Luxury hotel in Paris',
+          location: '59th Street'
+        },
+        {
+          id: '0r2ZyXLgD1FhiKA7qfSh',
+          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/italian_restaurant-800x600.jpg',
+          title: 'Italian Restaurant',
+          tagline: 'Delicious, luxury food for you',
+          location: 'West 30th Street'
+        },
+        {
+          id: '2eYE1L9X8GWM2JFN96B6',
+          img: 'https://livewp.site/wp/md/listingeasy/wp-content/uploads/sites/4/2017/10/hand_made-800x600.jpg',
+          title: 'Hand Made',
+          tagline: 'Make your creative pizza',
+          location: 'West 83rd Street'
+        }
+      ]
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-  @import "../../sass/components/home/_popular.scss";
+<style lang='scss' scoped>
+  @import '../../sass/components/home/_popular.scss';
 </style>
