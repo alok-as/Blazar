@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Article from '../UI/article'
-import callToAction from '../UI/button'
+import Article from '../UI/cards/article-card'
+import callToAction from '../UI/buttons/button'
 
 export default {
   components: {

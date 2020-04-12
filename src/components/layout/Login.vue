@@ -1,125 +1,119 @@
 <template>
     <div class="login">
-        <div class="login__content">
-            <form class="login__form">
-                <div class="login__close" @click="closeLogin">&times;</div>
-                <h4 class="heading-2 mb-vsmall">Hey, welcome back!</h4>
-                <input class="login__control" type="text" placeholder="Username or Email address*">
-                <input class="login__control" type="text" placeholder="Password*">
-                <div class="login__help mt-small">
+        <div class="login__backdrop" v-show="showLogin"></div>
+        <div class="login__modal" v-show="showLogin" :style="{top:scrollPosition + 180 + 'px'}">
+            <span class="login__close" @click="closeLogin">&times;</span>
+            <form class="login__form center">
+                <h3 class="heading-2 mb-vsmall">Hey, welcome back!</h3>
+                <input class="login__field" type="text" placeholder="Username or Email address *">
+                <input class="login__field" type="password" placeholder="Password*">
+                <div class="login__options">
                     <div class="login__remember">
-                        <input class="login__checkbox" type="checkbox" id="remember">
-                        <label for="remember">Remember me</label>
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">Remember me</label>
                     </div>
-                    <span class="login__lost">Lost your password?</span>
+                    <div class="login__forgot">Forgot your password?</div>
                 </div>
-                <button class="btn">Login</button>
+                <login-button class="mt-small" :text="'Login'"></login-button>
             </form>
         </div>
     </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import button from '../UI/btn'
 export default {
-  methods: {
-    ...mapMutations(['closeLogin'])
-  }
+    components: {
+        'login-button': button 
+    },
+    computed: {
+        showLogin () {
+            return this.$store.getters.showLogin
+        },
+        scrollPosition () {
+            return this.$store.getters.getScrollPosition
+        }
+    },
+    methods: {
+        closeLogin () {
+            this.$store.commit('closeLogin')
+        }
+    }
 }
 </script>
-
 <style lang="scss" scoped>
-.login{
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-    background-color: rgba($color: #000000, $alpha: 0.6);
-    position: fixed;
-    transition: all .2s;
-
-    &__content{
+.login {
+    &__backdrop {
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: rgba(0,0,0,.8);
+        transition: all 0.5s;
     }
 
-    &__close{
+    &__modal {
+        background-color: $color-white;
         position: absolute;
         top: 0;
-        right: 1.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+        padding: 4rem 6rem;
+        border-radius: 5px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 1rem;
         font-size: 3rem;
+        transition: all 0.4s ease;
         cursor: pointer;
-        transition: all .3s;
-        &:hover{
+
+        &:hover {
             color: $color-blue-light;
         }
     }
 
-    &__form{
-        padding: 4rem 6rem;
-        background-color: $color-white;
-        display: inline-block;
-        border-radius: .8rem;
-        position: relative;
-        opacity: 0;
-        transform: translateY(-220%);
-        transition: all .4s ease-in .5s;
-        animation: pop-in 1s 1 .4s cubic-bezier(.3,.99,1,1) forwards;
-    }
-
-    &__control{
-        background-color: none;
-        border: 1px solid $color-grey-light;
-        font-family: inherit;
-        font-size: 1.4rem;
-        padding: 1.5rem;
-        padding-left: 2rem;
-        border-radius: 100px;
+    &__field {
         display: block;
         width: 100%;
+        background: none;
         outline: none;
-        &:not(:last-child){
+        border: 1px solid $color-grey-light;
+        border-radius: 100px;
+        padding: 1.6rem;
+        font-family: inherit;
+        font-size: 1.4rem;        
+        &:not(:last-child) {
             margin-bottom: 2rem;
         }
     }
 
-    &__help{
+    &__options {
         display: flex;
         justify-content: space-between;
-        font-size: 1.4rem;
+        align-items: center;
     }
 
-    &__checkbox{
-        vertical-align: middle;
-        margin-right: .5rem;
-    }
-
-    &__lost{
-        color:$color-blue-light;
-        cursor: pointer;
-        transition: all .3s;
-
-        &:hover{
-            color: $color-grey-light;
+    &__remember {
+        input {
+            vertical-align: middle;
+            margin-right: .6rem;
+        }
+        label {
+            color: $color-grey-dark;
+            font-size: 1.4rem;
         }
     }
-}
 
-.btn{
-    margin: 2rem auto 0 auto;
-}
-
-.pop-up-enter{
-    opacity: 0;
-    transform: translateY(-220%);
-}
-.pop-up-active{
-    animation: popin 1s 1 .4s ease-in forwards;
-}
-
-.pop-up-leave-active{
-    animation: popout 1s 1 .4s ease-out forwards;
+    &__forgot{
+        color: $color-blue-light;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
 }
 </style>

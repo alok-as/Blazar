@@ -13,11 +13,15 @@ export default new Vuex.Store({
       categories: ['Food & cafes', 'Hotels & Hostels', 'Finances', 'Health', 'Plants & Deco'],
       locations: ['Delhi', 'Mumbai', 'Kolkata', 'Pune']
     },
-    results: []
+    results: [],
+    scrollPosition: 0
   },
   getters: {
     showLogin: state => {
       return state.showLogin
+    },
+    getScrollPosition: state => {
+      return state.scrollPosition
     },
     getCategory: state => {
       if (localStorage.getItem('category') !== null){
@@ -44,6 +48,8 @@ export default new Vuex.Store({
   mutations: {
     openLogin: state => {
       state.showLogin = true
+      state.scrollPosition = window.scrollY
+      console.log(window.scrollY)
     },
     closeLogin: state => {
       state.showLogin = false
@@ -67,9 +73,6 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    openLogin: ({ commit }) => {
-      commit('openLogin')
-    },
     closeLogin: ({ commit }) => {
       commit('closeLogin')
     },

@@ -1,0 +1,76 @@
+.navigation{
+    box-shadow: 1px 0 10px rgba(0, 0, 0, .1);
+    background: white;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    transition: all .3s ease;
+    transform: translateY(-100%);
+}
+
+.nav{
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        font-weight: 600;
+        font-size: 2.3rem;
+        text-transform: uppercase;
+        color: $color-blue-dark;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        sup{
+            font-weight: 300;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            margin-top: -1rem;
+            margin-left: .5rem;
+        }
+
+        &::before{
+            content: "";
+            display: inline-block;
+            width: 3.5rem;
+            height: 3.5rem;
+            margin-right: .7rem;
+            background-color: $color-blue-light;
+                    -webkit-mask-image: url(../../assets/SVG/location.svg);
+                    mask-image: url(../../assets/SVG/location.svg);
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+        }
+    }
+
+    &__list{
+        list-style: none;
+    }
+    
+    &__signup {
+        display: flex;
+        align-items: center;
+        &:link,
+        &:visited{
+            text-decoration: none;
+            color: black;
+        }
+
+        &::before{
+            content: "";
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+            vertical-align: middle;
+            background-color: $color-blue-light;
+                    -webkit-mask-image: url(../../assets/SVG/add-user.svg);
+                    mask-image: url(../../assets/SVG/add-user.svg);
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+        }
+    }
+}
+

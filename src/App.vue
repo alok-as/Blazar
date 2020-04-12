@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <app-login v-show="showModal"></app-login>
-    <transition name="fade">
-      <scroll-nav></scroll-nav>
-    </transition>
-    <router-view></router-view>
+    <app-scroll-nav></app-scroll-nav>
+    <main>
+      <router-view></router-view>
+    </main>
     <app-footer></app-footer>
+    <app-login></app-login>
   </div>
 </template>
 
@@ -21,22 +21,18 @@ export default {
   },
   components: {
     'app-login': Login,
-    'scroll-nav': ScrollNav,
+    'app-scroll-nav': ScrollNav,
     'app-footer': Footer
   },
   methods: {
+    // For adding and removing the scroll navigation
     testscroll () {
       const navigation = document.querySelector('.navigation')
-      if (window.scrollY > 100) {
+      if (window.scrollY > 150) {
         navigation.style.transform = 'translateY(0)'
       } else {
         navigation.style.transform = 'translateY(-100%)'
       }
-    }
-  },
-  computed: {
-    showModal () {
-      return this.$store.getters.showLogin
     }
   },
   created () {
@@ -50,18 +46,5 @@ export default {
 <style lang="scss">
 #app{
   position: relative;
-}
-
-.fade-enter{
-  opacity: 0;
-}
-
-.fade-enter-active{
-  transition: all .6s;
-}
-
-.fade-leave-active{
-  opacity: 0;
-  transition: all .6s;
 }
 </style>

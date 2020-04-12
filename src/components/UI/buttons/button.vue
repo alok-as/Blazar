@@ -2,7 +2,7 @@
     <button class="cta">
         {{ text }}
         <svg>
-            <use xlink:href="../../sass/sprites.svg#icon-chevron-small-right"></use>
+            <use xlink:href="../../../sass/sprites.svg#icon-chevron-small-right"></use>
         </svg>
     </button>
 </template>

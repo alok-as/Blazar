@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import callToAction from '../UI/button'
+import callToAction from '../UI/buttons/button'
 
 export default {
   components: {

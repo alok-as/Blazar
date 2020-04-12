@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import CardCompostion from './WorkCardComposition'
+import CardCompostion from '../UI/cards/composition-card'
 export default {
   components: {
     'card-composition': CardCompostion

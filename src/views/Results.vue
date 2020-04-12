@@ -20,7 +20,7 @@
 
 <script>
 import CustomSelect2 from '../components/Shared/Custom/CustomSelect2'
-import ResultCard from '../components/Result/ResultCard'
+import ResultCard from '../components/UI/cards/result-card'
 import ResultMap from '../components/Result/ResultMap'
 
 export default {

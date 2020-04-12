@@ -54,7 +54,7 @@
                         </ul>
                     </li>
                 </ul>
-                <a href="#" @click="openLogin" class="nav__signup">Sign Up / Register</a>
+                <a href="#" @click.prevent="openLogin" class="nav__signup">Sign Up / Register</a>
             </nav>
             <!-- Header Content -->
             <div class="header__content">
@@ -74,14 +74,15 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import SearchBox from './HomeSearch.Box'
 export default {
   components: {
     'header-search': SearchBox
   },
   methods: {
-    ...mapActions(['openLogin']),
+    openLogin () {
+        this.$store.commit('openLogin')
+    },
     toHome () {
       this.$router.push({ path: '/' })
     }
