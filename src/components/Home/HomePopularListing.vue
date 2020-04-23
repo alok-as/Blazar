@@ -18,13 +18,13 @@ import callToAction from '../UI/buttons/button'
 export default {
   components: {
     'popular-card': Card,
-    'call-to-action':callToAction
+    'call-to-action': callToAction
   },
   data () {
     return {
       content: {
         heading: 'Popular Listings',
-        subheading: 'Explore the greates places in the city. You won’t be disappointed.',
+        subheading: 'Explore the greates places in the city. You won’t be disappointed.'
       },
       popularItems: [
         {

@@ -10,34 +10,30 @@ export default new Vuex.Store({
       category: '',
       location: '',
       validSearch: false,
-      categories: ['Food & cafes', 'Hotels & Hostels', 'Finances', 'Health', 'Plants & Deco'],
+      categories: ['Food & cafes', 'Hotels & Hostels', 'Outdoor', 'Shops & Store', 'Clubs & Pub'],
       locations: ['Delhi', 'Mumbai', 'Kolkata', 'Pune']
     },
-    results: [],
-    scrollPosition: 0
+    results: []
   },
   getters: {
     showLogin: state => {
       return state.showLogin
     },
-    getScrollPosition: state => {
-      return state.scrollPosition
-    },
     getCategory: state => {
-      if (localStorage.getItem('category') !== null){
+      if (localStorage.getItem('category') !== null) {
         state.search.category = JSON.parse(localStorage.getItem('category'))
       }
       return state.search.category
     },
     getLocation: state => {
-      if (localStorage.getItem('location') !== null){
+      if (localStorage.getItem('location') !== null) {
         state.search.location = JSON.parse(localStorage.getItem('location'))
       }
       return state.search.location
     },
     getCategories: state => state.search.categories,
     getLocations: state => state.search.locations,
-    resultsArr: state => state.results, 
+    resultsArr: state => state.results,
     validSearch: (state, getters) => {
       if (state.search.categories.includes(getters.getCategory) && state.search.locations.includes(getters.getLocation)) {
         return !state.search.validSearch
@@ -48,15 +44,13 @@ export default new Vuex.Store({
   mutations: {
     openLogin: state => {
       state.showLogin = true
-      state.scrollPosition = window.scrollY
-      console.log(window.scrollY)
     },
     closeLogin: state => {
       state.showLogin = false
     },
     setCategory: (state, newCategory) => {
       state.search.category = newCategory
-      localStorage.setItem('category',JSON.stringify(newCategory))
+      localStorage.setItem('category', JSON.stringify(newCategory))
     },
     setLocation: (state, newLocation) => {
       state.search.location = newLocation
@@ -67,7 +61,7 @@ export default new Vuex.Store({
       state.results = results
     },
     getLocalResults: (state) => {
-      if(localStorage.getItem('results') !== null) {
+      if (localStorage.getItem('results') !== null) {
         state.results = JSON.parse(localStorage.getItem('results'))
       }
     }

@@ -17,9 +17,9 @@
 <script>
 import callToAction from '../UI/buttons/button'
 export default {
-    components: {
-        callToAction
-    }
+  components: {
+    callToAction
+  }
 }
 </script>
 <style lang="scss" scoped>

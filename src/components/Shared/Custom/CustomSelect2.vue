@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-select" tabindex="1" @blur="closeMenu">
+    <div class="custom-select">
         <div class="custom-select__selected" @click="toggleMenu">
             {{ category }}
             <svg class="custom-select__arrow" :class="{turn:arrow}">
@@ -41,20 +41,22 @@ export default {
   },
   methods: {
     setCategory (value) {
-      this.type === 'Locations' ? this.$store.commit('setLocation', value) : this.$store.commit('setCategory', value) 
+      this.type === 'Locations' ? this.$store.commit('setLocation', value) : this.$store.commit('setCategory', value)
     },
     closeMenu () {
       this.open = false
       this.arrow = false
+      this.filterSearch = ''
     },
     toggleMenu () {
       this.open = !this.open
       this.close = !this.close
+      this.arrow = !this.arrow
     }
   },
   watch: {
     category (newCategory, oldCategory) {
-      this.$store.dispatch('fetchResults',newCategory)
+      this.$store.dispatch('fetchResults', newCategory)
     }
   }
 }
@@ -124,7 +126,7 @@ export default {
 }
 
 .turn {
-    transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
 </style>

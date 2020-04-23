@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" @click="resultPage">
         <img class="card__img" :src="result.img" alt="Card 1">
         <div class="card__content">
             <h4 class="heading-4 card__heading">{{result.title}}</h4>
@@ -28,7 +28,17 @@
 </template>
 <script>
 export default {
-  props: ['result']
+  props: ['result'],
+  methods: {
+    resultPage () {
+      this.$router.push({
+        name: 'Result',
+        params: {
+          result: this.result
+        }
+      })
+    }
+  }
 }
 </script>
 
@@ -43,7 +53,7 @@ export default {
 
     &:hover &__icon--heart{
         fill: orangered;
-    }   
+    }
     &:hover &__like{
         color: orangered;
         border: 1px solid orangered;

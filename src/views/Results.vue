@@ -21,7 +21,7 @@
 <script>
 import CustomSelect2 from '../components/Shared/Custom/CustomSelect2'
 import ResultCard from '../components/UI/cards/result-card'
-import ResultMap from '../components/Result/ResultMap'
+import ResultMap from '../components/Results/ResultMap'
 
 export default {
   components: {
@@ -40,7 +40,7 @@ export default {
       return this.$store.getters.getLocations
     }
   },
-  created() {
+  created () {
     this.$store.commit('getLocalResults')
   },
   data () {

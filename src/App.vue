@@ -46,5 +46,6 @@ export default {
 <style lang="scss">
 #app{
   position: relative;
+  backface-visibility: hidden;
 }
 </style>

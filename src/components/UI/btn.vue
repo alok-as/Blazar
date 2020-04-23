@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-    props: ['text']
+  props: ['text']
 }
 </script>
 <style lang="scss" scoped>
@@ -27,5 +27,5 @@ export default {
         color: $color-blue-light;
     }
 }
-    
+
 </style>

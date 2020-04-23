@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-    props: ['content']
+  props: ['content']
 }
 </script>
 <style lang="scss" scoped>

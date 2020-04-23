@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Results from '../views/Results.vue'
+import Result from '../views/Result.vue'
 import HowItWorks from '../views/HowItWorks.vue'
 import Pricing from '../views/Pricing.vue'
 
@@ -22,8 +23,8 @@ const routes = [
     component: About
   },
   {
-    path: '/result',
-    name: 'Result',
+    path: '/results',
+    name: 'Results',
     component: Results
   },
   {
@@ -35,6 +36,11 @@ const routes = [
     path: '/pricing',
     name: 'Pricing',
     component: Pricing
+  },
+  {
+    path: '/result',
+    name: 'Result',
+    component: Result
   }
 
 ]

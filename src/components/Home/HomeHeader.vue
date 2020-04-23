@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     openLogin () {
-        this.$store.commit('openLogin')
+      this.$store.commit('openLogin')
     },
     toHome () {
       this.$router.push({ path: '/' })

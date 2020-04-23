@@ -21,12 +21,12 @@
     </form>
 </template>
 <script>
-
+// import CustomSelect2 from '../Shared/Custom/CustomSelect2'
 export default {
   methods: {
     searchResults () {
       this.$router.replace({
-        name: 'Result',
+        name: 'Results',
         query: {
           searchCategory: this.searchCategory,
           searchLocation: this.searchLocation
@@ -59,8 +59,8 @@ export default {
       return this.$store.getters.getLocations
     },
     validSearch () {
-      let valid = this.$store.getters.validSearch
-      return !valid;
+      const valid = this.$store.getters.validSearch
+      return !valid
     }
   }
 }

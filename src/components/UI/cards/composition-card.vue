@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-    props: ['step']
+  props: ['step']
 }
 </script>
 <style lang="scss" scoped>
@@ -123,5 +123,5 @@ export default {
     }
 
 }
-    
+
 </style>

@@ -15,49 +15,49 @@
 <script>
 import NavItem from '../UI/hover-dropdown-link'
 export default {
-    components: {
-        'nav-item': NavItem
+  components: {
+    'nav-item': NavItem
+  },
+  methods: {
+    toHome: function () {
+      this.$router.push({ path: '/' })
     },
-    methods: {
-        toHome: function () {
-        this.$router.push({ path: '/' })
-        },
-        openLogin () {
-            this.$store.commit('openLogin')
-        }
-    },
-    data () {
-        return {
-            navItems: [
-                {
-                    linkName: 'Explore',
-                    dropLinks: [
-                        { name: 'All Listings' , path: ''},
-                        { name: 'Category 1' , path: ''},
-                        { name: 'Category 2' , path: ''},
-                        { name: 'Category 3' , path: ''}
-                    ]
-                },
-                {
-                    linkName: 'Pages',
-                    dropLinks: [
-                        { name: 'About Us' , path: '/about'},
-                        { name: 'How it Works' , path: '/how-it-works'},
-                        { name: 'Pricing' , path: '/pricing'}
-                    ]
-                },
-                {
-                    linkName: 'Tips and Articles',
-                    dropLinks: [
-                        { name: 'All Listings' , path: ''},
-                        { name: 'Category 1' , path: ''},
-                        { name: 'Category 2' , path: ''},
-                        { name: 'Category 3' , path: ''}
-                    ]
-                }
-            ]
-        }
+    openLogin () {
+      this.$store.commit('openLogin')
     }
+  },
+  data () {
+    return {
+      navItems: [
+        {
+          linkName: 'Explore',
+          dropLinks: [
+            { name: 'All Listings', path: '' },
+            { name: 'Category 1', path: '' },
+            { name: 'Category 2', path: '' },
+            { name: 'Category 3', path: '' }
+          ]
+        },
+        {
+          linkName: 'Pages',
+          dropLinks: [
+            { name: 'About Us', path: '/about' },
+            { name: 'How it Works', path: '/how-it-works' },
+            { name: 'Pricing', path: '/pricing' }
+          ]
+        },
+        {
+          linkName: 'Tips and Articles',
+          dropLinks: [
+            { name: 'All Listings', path: '' },
+            { name: 'Category 1', path: '' },
+            { name: 'Category 2', path: '' },
+            { name: 'Category 3', path: '' }
+          ]
+        }
+      ]
+    }
+  }
 }
 </script>
 
